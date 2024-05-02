@@ -1,0 +1,102 @@
+---
+title: "What the package does"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{What the package does}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MATH4753RYANFITZ24)
+```
+
+# Introduction
+
+This is a project made for MATH-4753 Spring 2024 that has several functions added over the year.
+
+## fire
+
+fire is a data set collected concerning home damage from fire
+
+```{r}
+MATH4753RYANFITZ24::fire
+```
+
+
+## mybin
+
+creates a binomial distribution and puts the result into a barplot
+
+```{r}
+MATH4753RYANFITZ24::mybin(iter = 1001, n = 32, p = .45)
+```
+
+
+## myboot2
+
+bootstrap re sampling to estimate the sampling distribution of a statistic and makes a confidence interval.
+
+```{r}
+MATH4753RYANFITZ24::myboot2(iter = 100, x = rnorm(99), fun = "mean", alpha = 0.05, cx = 1.5)
+```
+
+## mycltp
+
+Central Limit theorem for a Poisson distribution
+
+```{r}
+#MATH4753RYANFITZ24::mycltp(n=10,iter=100, lambda = 4)
+```
+
+## myf
+
+Model y = b0 + b1x + b2(x-xk)*(x>xk) with x_k being 18
+
+```{r}
+MATH4753RYANFITZ24::myf(32, coef = c(1, 2, 3))
+```
+
+## mymlnorm
+
+maximum likelihood estimation for a normal distribution
+
+```{r}
+mymlnorm(x=c(10,12,13,15,12,11,10),mu=seq(10,14,length=1000),
+sig=seq(0.1,4,length=1000),lwd=2,labcex=1)
+```
+
+
+## myncurve
+
+Plots the normal distribution and shades the area under the curve up to a. Also returns the area under the curve up to a.
+
+```{r}
+MATH4753RYANFITZ24::myncurve(mu=10,sigma=5, a=6)
+```
+
+
+## myquad
+
+Quadratic function x^2 - 5*x + 6 with a given x
+
+```{r}
+MATH4753RYANFITZ24::myquad(x = 20)
+```
+
+
+## ntickets
+
+calculates the number of tickets to be sold when the number of seats in the flight is N and the probability of a "show" is p and gamma is the probability a plane will be truly overbooked
+
+```{r}
+MATH4753RYANFITZ24::ntickets(N=500, gamma = 0.03, p = 0.90)
+```
+
